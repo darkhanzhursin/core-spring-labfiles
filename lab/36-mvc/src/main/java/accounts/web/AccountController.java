@@ -65,7 +65,7 @@ public class AccountController {
 	// - Use the accountManager to obtain an account. This is the value to return
 	// - Save all work.
 	@GetMapping("/accounts/{id}")
-	public Account accountDetails(@PathVariable Long id) {
+	public Account accountDetails(@PathVariable("id") Long id) {
 		return accountManager.getAccount(id);
 	}
 
