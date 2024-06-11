@@ -28,7 +28,7 @@ public class AccountControllerTests {
 
 	// TODO-07: Remove the @Disabled annotation, run the test, it should now pass.
 	@Test
-	@Disabled
+	//@Disabled
 	public void testHandleListRequest() {
 		List<Account> accounts = controller.accountList();
 
@@ -44,16 +44,19 @@ public class AccountControllerTests {
 
 	// TODO-10a: Remove the @Disabled annotation, run the test, it should pass.
 	@Test
-	@Disabled
+	//@Disabled
 	public void testHandleDetailsRequest() {
 		// TODO-09a: Implement test code which calls the accountDetails() method on the controller.
 		// - It will take one parameter - use "expectedAccountId" defined above
 		// - It will return an Account
-
+		Account account = controller.accountDetails(expectedAccountId);
 		// TODO-09b: Define the following assertions:
 		// - The account is not null
 		// - The account id matches "expectedAccountId" defined above
 		// - The account number matches "expectedAccountNumber" defined above
+		assertNotNull(account);
+		assertEquals(expectedAccountId, (long) account.getEntityId());
+		assertEquals(expectedAccountNumber, account.getNumber());
 	}
 
 }
